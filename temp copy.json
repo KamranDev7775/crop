@@ -1,0 +1,814 @@
+[
+  {
+    "fid": 1,
+    "name": "Rice",
+    "image_url": "/rice.jpeg",
+    "description": "Rice is a staple food crop, grown in wet, warm conditions. It requires consistent water supply and fertile, well-drained soil for optimal growth. Proper management ensures a productive yield.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "Flooded fields, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper irrigation and maintain water levels in paddy fields."
+    },
+    "management": [
+      {
+        "description": "Water management (maintain water levels)",
+        "frequency": "daily"
+      },
+      {
+        "description": "Monitor and control weeds",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Apply nitrogen fertilizers",
+        "frequency": "bi-weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Drain fields before harvest",
+        "frequency": "at harvest"
+      },
+      {
+        "description": "Check soil fertility",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Plan crop rotation (for next season)",
+        "frequency": "annually"
+      }
+    ]
+  },
+  {
+    "fid": 2,
+    "name": "Maize",
+    "image_url": "/maize.jpeg",
+    "description": "Maize, also known as corn, is a widely grown crop that thrives in warm weather. It requires well-drained, fertile soil and adequate moisture for optimal growth.",
+    "weather_requirements": {
+      "Temperature": "60°F to 95°F (16°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Plant maize in blocks rather than single rows for better pollination."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Check and adjust plant supports",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune suckers and dead leaves",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Rotate crops (plan for next season)",
+        "frequency": "annually"
+      }
+    ]
+  },
+  {
+    "fid": 3,
+    "name": "Jute",
+    "image_url": "/jute.jpeg",
+    "description": "Jute is a tropical plant grown for its fibers, used in making ropes and textiles. It requires warm, humid climates and well-drained soil.",
+    "weather_requirements": {
+      "Temperature": "75°F to 95°F (24°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "2-3 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing between plants to avoid overcrowding."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "daily"
+      },
+      {
+        "description": "Weed control",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Harvest fibers when plants are mature",
+        "frequency": "at harvest"
+      },
+      {
+        "description": "Check soil fertility",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 4,
+    "name": "Cotton",
+    "image_url": "/cotton.jpeg",
+    "description": "Cotton is a warm-season crop valued for its fibers, used in textile production. It requires well-drained, fertile soil and a warm climate.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing between plants for good air circulation."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Rotate crops (plan for next season)",
+        "frequency": "annually"
+      }
+    ]
+  },
+  {
+    "fid": 5,
+    "name": "Coconut",
+    "image_url": "/coconut.jpeg",
+    "description": "Coconut palms thrive in tropical climates and well-drained sandy soils. They produce versatile nuts used for food, oil, and fibers.",
+    "weather_requirements": {
+      "Temperature": "75°F to 90°F (24°C to 32°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Plant coconuts in well-drained soil to avoid waterlogging."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Fertilize regularly",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead fronds",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 6,
+    "name": "Papaya",
+    "image_url": "/papaya.jpeg",
+    "description": "Papaya is a tropical fruit tree that produces sweet, orange fruit. It thrives in warm, sunny climates and well-drained soil.",
+    "weather_requirements": {
+      "Temperature": "70°F to 90°F (21°C to 32°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing between plants for good air circulation."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead leaves",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 7,
+    "name": "Orange",
+    "image_url": "/orange.jpeg",
+    "description": "Orange trees produce sweet, tangy fruit and thrive in warm climates. They require well-drained, fertile soil and consistent watering.",
+    "weather_requirements": {
+      "Temperature": "55°F to 100°F (13°C to 38°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Prune regularly to maintain tree shape and health."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead or diseased branches",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 8,
+    "name": "Apple",
+    "image_url": "/apple.jpeg",
+    "description": "Apple trees produce a variety of sweet and tart fruits. They require cool climates and well-drained, fertile soil for optimal growth.",
+    "weather_requirements": {
+      "Temperature": "32°F to 75°F (0°C to 24°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing between trees to avoid overcrowding."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead or diseased branches",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 9,
+    "name": "Muskmelon",
+    "image_url": "/muskmelon.jpeg",
+    "description": "Muskmelons, also known as cantaloupes, are sweet, aromatic fruits that thrive in warm, sunny climates. They require well-drained, fertile soil.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Use mulch to retain soil moisture and suppress weeds."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead or diseased vines",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 10,
+    "name": "Watermelon",
+    "image_url": "/watermelon.jpeg",
+    "description": "Watermelons are juicy, sweet fruits that thrive in warm, sunny climates. They require well-drained, fertile soil and consistent moisture.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing between plants for good air circulation."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead or diseased vines",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 11,
+    "name": "Grapes",
+    "image_url": "/grapes.jpeg",
+    "description": "Grape vines produce sweet, juicy fruit and require warm, sunny climates and well-drained soil for optimal growth.",
+    "weather_requirements": {
+      "Temperature": "60°F to 85°F (16°C to 29°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Prune vines regularly to maintain shape and improve fruit quality."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead or diseased vines",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 12,
+    "name": "Mango",
+    "image_url": "/mango.jpeg",
+    "description": "Mango trees produce sweet, tropical fruits and thrive in warm, sunny climates. They require well-drained, fertile soil and consistent moisture.",
+    "weather_requirements": {
+      "Temperature": "70°F to 90°F (21°C to 32°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Prune regularly to maintain tree shape and health."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead or diseased branches",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 13,
+    "name": "Banana",
+    "image_url": "/banana.jpeg",
+    "description": "Banana plants are tropical and produce sweet, nutritious fruit. They require warm temperatures, full sun, and well-drained soil for optimal growth.",
+    "weather_requirements": {
+      "Temperature": "75°F to 95°F (24°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "2-3 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Mulch around the base to retain soil moisture and control weeds."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead leaves",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 14,
+    "name": "Pomegranate",
+    "image_url": "/pomegranate.jpeg",
+    "description": "Pomegranate trees produce tart, juicy fruits and thrive in warm, sunny climates. They require well-drained soil and consistent watering.",
+    "weather_requirements": {
+      "Temperature": "55°F to 95°F (13°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Prune regularly to maintain tree shape and health."
+    },
+    "management": [
+      {
+        "description": "Water deeply",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead or diseased branches",
+        "frequency": "monthly"
+      }
+    ]
+  },
+  {
+    "fid": 15,
+    "name": "Lentil",
+    "image_url": "/lentil.jpeg",
+    "description": "Lentils are a cool-season legume that produce nutritious seeds. They require well-drained, fertile soil and moderate temperatures for optimal growth.",
+    "weather_requirements": {
+      "Temperature": "50°F to 85°F (10°C to 29°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing to avoid overcrowding and improve air circulation."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Weed control",
+        "frequency": "weekly"
+      }
+    ]
+  },
+  {
+    "fid": 16,
+    "name": "Blackgram",
+    "image_url": "/blackgram.jpeg",
+    "description": "Blackgram, also known as urad dal, is a legume that produces protein-rich seeds. It requires warm weather, well-drained soil, and consistent moisture.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing to avoid overcrowding and improve air circulation."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Weed control",
+        "frequency": "weekly"
+      }
+    ]
+  },
+  {
+    "fid": 17,
+    "name": "Mungbean",
+    "image_url": "/mungbean.jpeg",
+    "description": "Mungbeans are legumes that produce small, green seeds rich in protein. They thrive in warm climates and well-drained soil.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing to avoid overcrowding and improve air circulation."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Weed control",
+        "frequency": "weekly"
+      }
+    ]
+  },
+  {
+    "fid": 18,
+    "name": "Mothbeans",
+    "image_url": "/mothbeans.jpeg",
+    "description": "Mothbeans are drought-resistant legumes that produce protein-rich seeds. They grow well in warm climates and well-drained soil.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Plant in well-drained soil to avoid waterlogging."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Weed control",
+        "frequency": "weekly"
+      }
+    ]
+  },
+  {
+    "fid": 19,
+    "name": "Pigeonpeas",
+    "image_url": "/pigeonpeas.jpeg",
+    "description": "Pigeonpeas are legumes that produce protein-rich seeds. They thrive in warm climates and well-drained soil.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing to avoid overcrowding and improve air circulation."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Weed control",
+        "frequency": "weekly"
+      }
+    ]
+  },
+  {
+    "fid": 20,
+    "name": "Kidneybeans",
+    "image_url": "/kidneybeans.jpeg",
+    "description": "Kidneybeans are legumes that produce protein-rich seeds. They thrive in warm climates and well-drained soil.",
+    "weather_requirements": {
+      "Temperature": "70°F to 95°F (21°C to 35°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing to avoid overcrowding and improve air circulation."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Weed control",
+        "frequency": "weekly"
+      }
+    ]
+  },
+  {
+    "fid": 21,
+    "name": "Chickpea",
+    "image_url": "/chickpea.jpeg",
+    "description": "Chickpeas, also known as garbanzo beans, are legumes that produce protein-rich seeds. They grow well in cool seasons and well-drained soil.",
+    "weather_requirements": {
+      "Temperature": "50°F to 85°F (10°C to 29°C)",
+      "Sunlight": "Full sun, at least 6 hours daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing to avoid overcrowding and improve air circulation."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Weed control",
+        "frequency": "weekly"
+      }
+    ]
+  },
+  {
+    "fid": 22,
+    "name": "Coffee",
+    "image_url": "/coffee.jpeg",
+    "description": "Coffee plants produce beans used to make the popular beverage. They thrive in tropical climates and well-drained, fertile soil.",
+    "weather_requirements": {
+      "Temperature": "60°F to 70°F (15°C to 24°C)",
+      "Sunlight": "Partial shade, 4-6 hours of sunlight daily",
+      "Water": "1-2 inches per week, consistent moisture"
+    },
+    "tips": {
+      "description": "Ensure proper spacing to avoid overcrowding and improve air circulation."
+    },
+    "management": [
+      {
+        "description": "Water regularly",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Monitor for pests and diseases",
+        "frequency": "daily"
+      },
+      {
+        "description": "Apply organic fertilizer",
+        "frequency": "monthly"
+      },
+      {
+        "description": "Check soil moisture",
+        "frequency": "weekly"
+      },
+      {
+        "description": "Prune dead or diseased branches",
+        "frequency": "monthly"
+      }
+    ]
+  }
+]

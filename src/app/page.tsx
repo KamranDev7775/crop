@@ -15,11 +15,44 @@ export default function CropSuggestionPage() {
     rainfall: "",
   })
 
+  // Validate inputs before submitting
+  const validateForm = () => {
+    const { nitrogen, phosphorus, potassium, temperature, ph } = formData
+    const nitrogenInt = parseFloat(nitrogen)
+    const phosphorusInt = parseFloat(phosphorus)
+    const potassiumInt = parseFloat(potassium)
+    const temperatureInt = parseFloat(temperature)
+    const phInt = parseFloat(ph)
+
+    // Validate nitrogen + phosphorus + potassium <= 100
+    if (nitrogenInt + phosphorusInt + potassiumInt > 100) {
+      alert("The sum of Nitrogen, Phosphorus, and Potassium should not exceed 100%.")
+      return false
+    }
+
+    // Validate temperature between 20 and 55
+    if (temperatureInt < 20 || temperatureInt > 55) {
+      alert("Temperature must be between 20°C and 55°C.")
+      return false
+    }
+
+    // Validate pH between 5 and 7
+    if (phInt < 5 || phInt > 7) {
+      alert("pH level must be between 5 and 7.")
+      return false
+    }
+
+    return true
+  }
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const queryParams = new URLSearchParams(formData as Record<string, string>).toString()
-    router.push(`/suggestion?${queryParams}`)
+    if (validateForm()) {
+      const queryParams = new URLSearchParams(formData as Record<string, string>).toString()
+      router.push(`/suggestion?${queryParams}`)
+    }
   }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData((prevState) => ({
@@ -29,24 +62,32 @@ export default function CropSuggestionPage() {
   }
 
   const handleFillClick = () => {
-    //rice 90	42	43		82.00274423	6.502985292	202.9355362
-
     setFormData({
-      nitrogen: "90",
-      phosphorus: "42",
-      potassium: "43",
-      temperature: "20.87974371",
-      humidity: "82.00274423",
-      ph: "6.502985292",
-      rainfall: "202.9355362",
+      nitrogen: "35",
+      phosphorus: "35",
+      potassium: "30",
+      temperature: "28.6",
+      humidity: "82.00",
+      ph: "6.5",
+      rainfall: "202.2",
     })
   }
 
+  const labelMap: Record<string, string> = {
+    nitrogen: "Nitrogen (%)",
+    phosphorus: "Phosphorus (%)",
+    potassium: "Potassium (%)",
+    temperature: "Temperature (°C)",
+    humidity: "Humidity (%)",
+    ph: "pH",
+    rainfall: "Rainfall (mm)",
+  }
+
   return (
-    <div className="min-h-screen p-4 sm:p-8 ">
-      <div className="max-w-6xl mx-auto  bg-gray-100 rounded-lg shadow-md p-6 sm:p-10">
+    <div className="min-h-screen p-4 sm:p-8">
+      <div className="max-w-6xl mx-auto bg-gray-100 rounded-lg shadow-md p-6 sm:p-10">
         <h1 className="text-3xl font-bold text-center text-gray-700 mb-8">Crop Suggestion</h1>
-        <button onClick={handleFillClick} className="text-xl font-bold text-gray-700 mb-2">📃</button>
+        <button onClick={handleFillClick} className="text-xl font-bold text-gray-700 mb-2">📃 Autofill Example</button>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.entries(formData).map(([key, value]) => (
@@ -55,18 +96,18 @@ export default function CropSuggestionPage() {
                   id={key}
                   name={key}
                   type="number"
-                  step="0.01"
+                  step="1"
                   value={value}
                   onChange={handleChange}
                   className="peer w-full h-12 px-4 border border-gray-300 rounded-md text-gray-900 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                  placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
+                  placeholder={labelMap[key]}
                   required
                 />
                 <label
                   htmlFor={key}
                   className="absolute left-4 -top-2.5 bg-white px-1 text-sm text-gray-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3.5 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-green-600"
                 >
-                  {key.charAt(0).toUpperCase() + key.slice(1)}
+                  {labelMap[key]}
                 </label>
               </div>
             ))}
@@ -84,4 +125,3 @@ export default function CropSuggestionPage() {
     </div>
   )
 }
-

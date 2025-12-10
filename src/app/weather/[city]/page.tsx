@@ -1,10 +1,24 @@
 import CityInput from '@/components/CityInput';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+
+// Weather Icons Mapping
+const weatherIcons: { [key: string]: string } = {
+  "clear sky": "☀️",
+  "few clouds": "🌤️",
+  "scattered clouds": "⛅",
+  "broken clouds": "☁️",
+  "shower rain": "🌧️",
+  "rain": "🌦️",
+  "thunderstorm": "⛈️",
+  "snow": "❄️",
+  "mist": "🌫️",
+};
 
 export default async function Page({
   params,
 }: {
-  params: Promise<{ city: string}>
-}){
+  params: Promise<{ city: string }>
+}) {
 
   const API_KEY = process.env.OPEN_WEATHER_API_KEY;
   const city = (await params).city.unslugify()
@@ -14,7 +28,6 @@ export default async function Page({
   );
 
   const geoData = await geoRes.json();
-  
   const { lat, lon } = geoData[0];
 
   const weatherRes = await fetch(
@@ -27,12 +40,10 @@ export default async function Page({
   );
   const forecast = await forecastRes.json();
 
-
-
   return (
-<div className="flex flex-col items-center pt-20 min-h-screen text-gray-800 p-2 pb-8">
+    <div className="flex flex-col items-center pt-20 min-h-screen text-gray-800 p-2 pb-8">
       <h1 className="text-3xl font-bold mb-4 text-white">AGRI WEATHER</h1>
-      < CityInput />
+      <CityInput />
 
       {forecast && (
         <div className="mt-6 p-6 bg-white rounded-lg shadow-md text-center w-full max-w-2xl">
@@ -46,25 +57,39 @@ export default async function Page({
               <p>Wind Speed: {weather.wind.speed} m/s</p>
             </div>
           )}
+
           <h2 className="text-xl font-semibold mb-4">5-Day Forecast</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {Array.isArray(forecast.list) && forecast.list.slice(0, 5).map((day: any, index: number) => (
-              <div key={index} className="p-4 bg-gray-100 rounded-lg text-center">
-                <p className="font-semibold">{new Date(day.dt_txt).toLocaleDateString()}</p>
-                <p>{day.weather[0].description}</p>
-                <p className="text-lg font-bold">{day.main.temp}°C</p>
-              </div>
-            ))}
+            {Array.isArray(forecast.list) &&
+              forecast.list
+                .filter((day: any) => new Date(day.dt_txt).getHours() === 12) // Pick entries at 12 PM
+                .slice(0, 5)
+                .map((day: any, index: number) => {
+                  const icon = weatherIcons[day.weather[0].description.toLowerCase()] || "❔";
+                  const dayName = new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "short" });
+                  const fullDate = new Date(day.dt_txt).toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+
+                  return (
+                    <div key={index} className="p-4 bg-gray-100 rounded-lg text-center shadow-sm">
+                      <div className="w-full h-2 bg-blue-400 rounded-t-md mb-2 flex items-center justify-center text-xl">
+                        {icon}
+                      </div>
+                      <p className="font-semibold">{dayName}</p>
+                      <p className="text-sm">{fullDate}</p> {/* Added full date */}
+                      <p className="capitalize text-sm">{day.weather[0].description}</p>
+                      <p className="text-lg font-bold">{Math.round(day.main.temp)}°C</p>
+                    </div>
+                  );
+                })}
           </div>
         </div>
       )}
-
     </div>
   );
 };
 
 
-
+// --- String Utilities for slugify and unslugify ---
 declare global {
   interface String {
     slugify(): string;
@@ -72,20 +97,18 @@ declare global {
   }
 }
 
-// Add slugify method to String prototype
 String.prototype.slugify = function () {
-  return this.replaceAll(' ', '_-_')    // Replace all spaces with hyphens
-    .replaceAll('&', '_and_')  // Replace all '&' with 'and'
-    .replaceAll('/', '_or_') // Replace all '/' with 'or'
+  return this.replaceAll(' ', '_-_')
+    .replaceAll('&', '_and_')
+    .replaceAll('/', '_or_')
     .replaceAll(',', '_comma_')
-    .replaceAll('.', '_dot_')
+    .replaceAll('.', '_dot_');
 };
 
-// Add unslugify method to String prototype
 String.prototype.unslugify = function () {
-  return this.replaceAll('_-_', ' ')    // Replace all hyphens with spaces
-    .replaceAll('_and_', '&')  // Replace all 'and' with '&'
-    .replaceAll('_or_', '/')  // Replace all 'or' with '/'
+  return this.replaceAll('_-_', ' ')
+    .replaceAll('_and_', '&')
+    .replaceAll('_or_', '/')
     .replaceAll('_comma_', ",")
-    .replaceAll('_dot_', ".")
+    .replaceAll('_dot_', ".");
 };

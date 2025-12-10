@@ -75,7 +75,7 @@ export default function RootLayout({
           </div>
           <div>
             <footer className="fixed bottom-0 w-full bg-gray-200 py-2 flex justify-center items-center">
-              <p className="text-gray-500 text-center text-sm"> Made by Shafiq Ur Rehman</p>
+              <p className="text-gray-500 text-center text-sm"> MADE BY SSF</p>
             </footer>
           </div>
         </main>

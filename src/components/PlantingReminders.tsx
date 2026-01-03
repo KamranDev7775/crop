@@ -19,7 +19,7 @@ export default function PlantingReminders() {
     crop: "", 
     task: "", 
     date: "", 
-    priority: "medium" as const 
+    priority: "medium" as 'low' | 'medium' | 'high'
   })
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function PlantingReminders() {
     const savedReminders = localStorage.getItem('plantingReminders')
     if (savedReminders) {
       const parsed = JSON.parse(savedReminders)
-      setReminders(updateReminderStatuses(parsed))
+      setReminders(updateReminderStatuses(parsed) as Reminder[])
     } else {
       // Default reminders
       const defaultReminders: Reminder[] = [
@@ -57,7 +57,7 @@ export default function PlantingReminders() {
       setReminders(prev => {
         const updated = updateReminderStatuses(prev)
         localStorage.setItem('plantingReminders', JSON.stringify(updated))
-        return updated
+        return updated as Reminder[]
       })
     }, 86400000) // Check daily
 
@@ -80,9 +80,9 @@ export default function PlantingReminders() {
       if (reminder.status === 'completed') return reminder
       
       if (reminder.date < today) {
-        return { ...reminder, status: 'overdue' as const }
+        return { ...reminder, status: 'overdue' as const } as Reminder
       } else {
-        return { ...reminder, status: 'upcoming' as const }
+        return { ...reminder, status: 'upcoming' as const } as Reminder
       }
     })
   }
@@ -132,7 +132,7 @@ export default function PlantingReminders() {
         ? { ...r, status: r.status === 'completed' ? 'upcoming' : 'completed' as const }
         : r
     )
-    setReminders(updatedReminders)
+    setReminders(updatedReminders as Reminder[])
     localStorage.setItem('plantingReminders', JSON.stringify(updatedReminders))
   }
 

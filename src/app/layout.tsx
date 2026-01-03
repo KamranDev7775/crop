@@ -32,17 +32,19 @@ export default function RootLayout({
 
           <div className="fixed top-0 w-full bg-gray-200 z-50 ">
             <section className="bg-gray-100 h-20 flex justify-between items-center">
-             <Link href="/">
+             <Link href="/home">
                 <div className=" ml-4 flex justify-between items-center">
                   <h1 className="font-semibold text-2xl text-green-500 text-outline">AGRI ADVICE</h1>
                 </div>
               </Link>
-              <div className="flex justify-between items-center space-x-4">
- 
-              <Link href="/" className="text-green-600 underline max-md:hidden">
+              <div className="flex justify-center items-center space-x-4">
+              <Link href="/" className="text-green-600 font-bold max-md:hidden">
+                INTRO
+              </Link>
+              <Link href="/home" className="text-green-600 font-bold max-md:hidden">
                 HOME
               </Link>
-              <Link href="/weather" className="text-green-600 underline">
+              <Link href="/weather" className="text-green-600 font-bold">
                 WEATHER
               </Link>
               <Link href="/about">

@@ -1,126 +1,54 @@
-"use client"
+import Link from "next/link"
 
-import { useState, type FormEvent } from "react"
-import { useRouter } from "next/navigation"
-
-export default function CropSuggestionPage() {
-  const router = useRouter()
-  const [formData, setFormData] = useState({
-    nitrogen: "",
-    phosphorus: "",
-    potassium: "",
-    temperature: "",
-    humidity: "",
-    ph: "",
-    rainfall: "",
-  })
-
-  // Validate inputs before submitting
-  const validateForm = () => {
-    const { nitrogen, phosphorus, potassium, temperature, ph } = formData
-    const nitrogenInt = parseFloat(nitrogen)
-    const phosphorusInt = parseFloat(phosphorus)
-    const potassiumInt = parseFloat(potassium)
-    const temperatureInt = parseFloat(temperature)
-    const phInt = parseFloat(ph)
-
-    // Validate nitrogen + phosphorus + potassium <= 100
-    if (nitrogenInt + phosphorusInt + potassiumInt > 100) {
-      alert("The sum of Nitrogen, Phosphorus, and Potassium should not exceed 100%.")
-      return false
-    }
-
-    // Validate temperature between 20 and 55
-    if (temperatureInt < 20 || temperatureInt > 55) {
-      alert("Temperature must be between 20°C and 55°C.")
-      return false
-    }
-
-    // Validate pH between 5 and 7
-    if (phInt < 5 || phInt > 7) {
-      alert("pH level must be between 5 and 7.")
-      return false
-    }
-
-    return true
-  }
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    if (validateForm()) {
-      const queryParams = new URLSearchParams(formData as Record<string, string>).toString()
-      router.push(`/suggestion?${queryParams}`)
-    }
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }))
-  }
-
-  const handleFillClick = () => {
-    setFormData({
-      nitrogen: "35",
-      phosphorus: "35",
-      potassium: "30",
-      temperature: "28.6",
-      humidity: "82.00",
-      ph: "6.5",
-      rainfall: "202.2",
-    })
-  }
-
-  const labelMap: Record<string, string> = {
-    nitrogen: "Nitrogen (%)",
-    phosphorus: "Phosphorus (%)",
-    potassium: "Potassium (%)",
-    temperature: "Temperature (°C)",
-    humidity: "Humidity (%)",
-    ph: "pH",
-    rainfall: "Rainfall (mm)",
-  }
-
+export default function HomePage() {
   return (
-    <div className="min-h-screen p-4 sm:p-8">
-      <div className="max-w-6xl mx-auto bg-gray-100 rounded-lg shadow-md p-6 sm:p-10">
-        <h1 className="text-3xl font-bold text-center text-gray-700 mb-8">Crop Suggestion</h1>
-        <button onClick={handleFillClick} className="text-xl font-bold text-gray-700 mb-2">📃 Autofill Example</button>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {Object.entries(formData).map(([key, value]) => (
-              <div key={key} className="relative">
-                <input
-                  id={key}
-                  name={key}
-                  type="number"
-                  step="1"
-                  value={value}
-                  onChange={handleChange}
-                  className="peer w-full h-12 px-4 border border-gray-300 rounded-md text-gray-900 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                  placeholder={labelMap[key]}
-                  required
-                />
-                <label
-                  htmlFor={key}
-                  className="absolute left-4 -top-2.5 bg-white px-1 text-sm text-gray-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3.5 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-green-600"
-                >
-                  {labelMap[key]}
-                </label>
-              </div>
-            ))}
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="bg-white bg-opacity-90 rounded-lg shadow-xl p-8 md:p-12">
+          <h1 className="text-4xl md:text-6xl font-bold text-green-600 mb-6">
+            AGRI ADVICE
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 mb-8">
+            Smart Crop Recommendations for Better Farming
+          </p>
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            Get personalized crop suggestions based on your soil conditions and environmental factors. 
+            Make informed decisions for optimal harvest yields.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-green-50 p-6 rounded-lg">
+              <div className="text-3xl mb-4">🌱</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Smart Analysis</h3>
+              <p className="text-gray-600">AI-powered crop recommendations based on soil nutrients and climate data</p>
+            </div>
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <div className="text-3xl mb-4">🌤️</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Weather Insights</h3>
+              <p className="text-gray-600">Real-time weather information to optimize your farming decisions</p>
+            </div>
+            <div className="bg-yellow-50 p-6 rounded-lg">
+              <div className="text-3xl mb-4">📈</div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Better Yields</h3>
+              <p className="text-gray-600">Maximize your harvest with data-driven agricultural guidance</p>
+            </div>
           </div>
-          <div className="flex justify-center">
-            <button
-              type="submit"
-              className="bg-green-500 text-white font-semibold rounded-md px-6 py-3 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 transition-colors"
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/home" 
+              className="bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors"
             >
-              Get Suggestion
-            </button>
+              Get Crop Suggestions
+            </Link>
+            <Link 
+              href="/weather" 
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Check Weather
+            </Link>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   )

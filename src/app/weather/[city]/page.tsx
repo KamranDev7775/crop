@@ -28,6 +28,19 @@ export default async function Page({
   );
 
   const geoData = await geoRes.json();
+  
+  if (!geoData || geoData.length === 0) {
+    return (
+      <div className="flex flex-col items-center pt-20 min-h-screen text-gray-800 p-2 pb-8">
+        <h1 className="text-3xl font-bold mb-4 text-white">AGRI WEATHER</h1>
+        <CityInput />
+        <div className="mt-6 p-6 bg-white rounded-lg shadow-md text-center w-full max-w-2xl">
+          <p className="text-gray-800">City not found. Please try another city name.</p>
+        </div>
+      </div>
+    )
+  }
+  
   const { lat, lon } = geoData[0];
 
   const weatherRes = await fetch(
